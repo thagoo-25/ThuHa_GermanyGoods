@@ -4,8 +4,8 @@ const cors = require('cors');
 const pool = require('./config/db');
 const authRoutes = require('./routes/auth');
 const protectedRoutes = require('./routes/protected');
+const productsRoutes = require('./routes/products');
 const authenticateToken = require('./middleware/auth');
-
 const app = express();
 
 // Middleware
@@ -13,9 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 
-
 // Routes
-app.get('/', (req, res) => {
+  app.get('/', (req, res) => {
     res.send('xin chao');
   });
 
@@ -28,6 +27,7 @@ app.use(express.static('public'));
 
 app.use('/auth', authRoutes);
 app.use('/api', protectedRoutes);
+app.use('/products',productsRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
