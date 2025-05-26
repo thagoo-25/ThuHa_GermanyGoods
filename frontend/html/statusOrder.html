@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tình trạng đơn hàng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/statusOrder.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Croissant+One&family=Oswald:wght@300;400&family=Jost:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+<header>
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <div class="left">Hàng Xách Tay Chính Hãng - Cam Kết Chất Lượng Sản Phẩm</div>
+        <div class="right">
+            <span><i class="fas fa-bell"></i> Thông báo</span>
+            <span><i class="fas fa-bell"></i> Cài đặt</span>
+            <span>Khám phá <i class="fas fa-chevron-down"></i></span>
+            <span onclick="myFunction()">Hỗ trợ </span>
+            <a href="/frontend/html/cart.html" style="color:white;"><span><i class="fas fa-shopping-cart"></i></span></a>
+            <button class="login-btn" onclick="window.location.href='/frontend/html/logInUser.html'">ĐĂNG NHẬP</button>
+            <!-- Hiển thị username + icon list khi đăng nhập -->
+            <span id="user-info">
+                <span id="username"></span>
+                <i id="menu-icon" class="fas fa-list" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="user-dropdown" class="dropdown-menu">
+                <a href="/frontend/html/profileUser.html">Tài khoản của tôi</a>
+                <a id="view-orders-link">Đơn hàng</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+        </div>
+    </div>
+    
+    <!-- Main Navigation Bar -->
+    <div class="main-nav">
+        <div class="logo"> <a href="/frontend/html/homepage.html"> <img src="/img/homepgae/lgo.jpg" alt="Logo"> </a> </div>
+        <div class="search-container">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <input type="text" class="search-box" id="search-box" placeholder="Search...">
+        </div>  
+        <div id="search-results"></div>      
+        <div class="contact">Liên hệ: 0396559621</div>
+    </div>
+    
+    <!-- Category Navigation -->
+    <nav>
+        <ul>
+            <li class="dropdown">
+                Trang điểm <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu">
+                    <div class="column">
+                        <h4>Mắt</h4>
+                        <a href="#">Phấn mắt</a>
+                        <a href="#">Bút kẻ mắt</a>
+                    </div>
+                    <div class="column">
+                        <h4>Mặt</h4>
+                        <a href="#">Kem nền</a>
+                        <a href="#">BB Cream & CC Cream</a>
+                        <a href="#">Phấn phủ</a>
+                    </div>
+                    <div class="column">
+                        <h4>Môi</h4>
+                        <a href="#">Son thỏi</a>
+                        <a href="#">Son nước</a>
+                    </div>
+                    <div class="column">
+                        <h4>Phụ kiện</h4>
+                        <a href="#">Tẩy trang</a>
+                        <a href="#">Bọt biển make up</a>
+                    </div>
+                </div>
+            </li>                     
+            <li class="dropdown">
+                Hộ gia đình <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu">
+                    <div class="column">
+                        <h4>Chất tẩy rửa & vệ sinh</h4>
+                        <a href="#">Vệ sinh Nhà bếp</a>
+                        <a href="#">Vệ sinh Phòng tắm & WC</a>
+                        <a href="#">Chất tẩy rửa đặc biệt</a>
+                    </div>
+                    <div class="column">
+                        <h4>Giặt ủi quần áo</h4>
+                        <a href="#">Bàn ủi & phụ kiện</a>
+                        <a href="#">Bột giặt</a>
+                        <a href="#">Phụ giặt</a>
+                        <a href="#">Vệ sinh lồng giặt</a>
+                        <a href="#">Thơm tủ quần áo</a>
+                    </div>
+                    <div class="column">
+                        <h4>Đồ gia dụng</h4>
+                        <a href="#">Dụng cụ phòng bếp</a>
+                        <a href="#">Đèn</a>
+                        <a href="#">Làm mát không khí & thơm phòng</a>
+                        <a href="#">Máy hút bụi</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                Chăm sóc và nước hoa <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu">
+                    <div class="column">
+                        <h4>Chăm sóc da mặt</h4>
+                        <a href="#">Sữa rửa mặt</a>
+                        <a href="#">Kem dưỡng da ban ngày</a>
+                        <a href="#">Kem dưỡng da ban đêm</a>
+                        <a href="#">Dưỡng môi</a>
+                        <a href="#">Dưỡng mắt</a>
+                        <a href="#">Mặt nạ</a>
+                    </div>
+                    <div class="column">
+                        <h4>Chăm sóc cơ thể</h4>
+                        <a href="#">Sữa tắm</a>
+                        <a href="#">Khử mùi</a>
+                        <a href="#">Dưỡng thể</a>
+                        <a href="#">Kem dưỡng tay</a>
+                        <a href="#">Chăm sóc gót chân</a>
+                    </div>
+                    <div class="column">
+                        <h4>Nước hoa</h4>
+                        <a href="#">Nước hoa nam</a>
+                        <a href="#">Nước hoa nữ</a>
+                    </div>
+                    <div class="column">
+                        <h4>Vệ sinh phụ nữ</h4>
+                        <a href="#">Cốc nguyệt san</a>
+                        <a href="#">Dung dịch vệ sinh phụ nữ</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                Thực phẩm chức năng <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu-one">
+                        <a href="#">Sữa rửa mặt</a>
+                        <a href="#">Kem dưỡng da ban ngày</a>
+                        <a href="#">Kem dưỡng da ban đêm</a>
+                        <a href="#">Dưỡng môi</a>
+                        <a href="#">Dưỡng mắt</a>
+                        <a href="#">Mặt nạ</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                Răng miệng <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu-one">
+                    <a href="#">Kem đánh răng</a>
+                    <a href="#">Bàn chải đánh răng</a>
+                    <a href="#">Máy tăm nước</a>
+                    <a href="#">Sản phẩm lưỡi và kẽ</a>
+                    <a href="#">Nước xúc miệng và xịt thơm</a>
+            </div>
+            </li>
+            <li class="dropdown">
+                Em bé <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu-one">
+                    <a href="#">Chống hăm</a>
+                    <a href="#">Dưỡng da baby</a>
+                    <a href="#">Tắm & gội baby</a>
+                    <a href="#">Sữa công thức</a>
+                    <a href="#">Viêm ngậm chắc răng</a>
+                    <a href="#">Phụ kiện phòng tắm</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="status-order">
+  <div class="top-bar">
+    <div class="left">
+      <a href="#" class="back">
+        <span>&larr;</span>
+        TRỞ LẠI
+      </a>
+    </div>
+    <div class="middle"></div>
+    <div class="right">
+      <span class="order-code" id="orderCode">MÃ ĐƠN HÀNG: 25041358N2SVYW</span>
+    </div>
+</div>
+
+  <div class="product-card">
+    <div class="tabs">
+      <button class="tab active">
+        German Goods
+        <span class="chat">Chat</span>
+      </button>
+    </div>
+
+    <div class="product-info-list" id="productList">
+      <!-- Sản phẩm sẽ được thêm vào ở đây qua script -->
+    </div>
+    
+    <!-- Chỉ 1 lần duy nhất -->
+    <div class="purchase-summary">
+      <div class="order-total">
+        <div class="price" >Tổng</div>
+        <div class="payment" id="productTotal"></div>
+      </div>
+      <div class="shipping-status">
+        <div class="delivery-status" >Tình trạng</div>
+        <div class="status-text" id="deliveryStatus">Đơn hàng đã được giao tới bạn</div>
+      </div>
+      <div class="shipping-info">
+        <div class="shipping-title">Quốc Tế</div>
+        <div class="shipping">Ninja Van</div>
+      </div>
+    </div>    
+
+    <div class="timeline">
+      <div class="step completed">
+        <div class="icon">📄</div>
+        <div class="label">Đơn Hàng Đã Đặt</div>
+        <div class="time" id="orderTime">01:18 13-04-2025</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <!--<a href="#" class="evaluate">Đánh giá</a>-->
+      <button class="details">Xem Chi Tiết Đơn Hàng</button>
+    </div>
+    
+    <!--<div class="contact-actions">
+      <button class="contact-seller">Liên Hệ Người Bán</button>
+      <button class="received">Đã Nhận Hàng</button>
+    </div>-->
+  </div>
+</div>
+  <script src="/frontend/js/statusOrder.js"></script>
+  <script>
+    const orderInfo = JSON.parse(localStorage.getItem('orderInfo'));
+    console.log("Order info:", orderInfo);
+  
+    const productList = document.getElementById("productList");
+  
+    if (orderInfo?.products?.length) {
+      // Xóa nội dung cũ nếu có
+      productList.innerHTML = "";
+  
+      // Duyệt từng sản phẩm để hiển thị
+    orderInfo.products.forEach((product) => {
+      const productHTML = `
+        <div class="product-info">
+          <img src="${product.image}" alt="product" class="product-image">
+          <div class="info-text">
+            <h2>${product.name}</h2>
+            <p>Số lượng: ${product.quantity}</p> <!-- Số lượng -->
+            <p>Giá: ₫${product.price.toLocaleString("vi-VN")}</p> <!-- Giá sản phẩm -->
+          </div>
+        </div>
+      `;
+      productList.insertAdjacentHTML("beforeend", productHTML);
+    });
+  
+      // Gán giá trị tổng đơn hàng
+      document.getElementById("productTotal").textContent = `₫${orderInfo.total_amount.toLocaleString("vi-VN")}`;
+  
+      
+      // Gán trạng thái giao hàng (nếu có)
+      if (orderInfo.order_status) {
+        document.getElementById("deliveryStatus").textContent = orderInfo.order_status;
+      }
+  
+      // Gán mã đơn hàng (nếu có)
+      if (orderInfo.order_code) {
+        document.getElementById("orderCode").textContent = `MÃ ĐƠN HÀNG: ${orderInfo.order_code}`;
+      }
+  
+      // Gán thời gian đặt đơn (nếu có)
+      if (orderInfo.order_date) {
+        document.getElementById("orderTime").textContent = orderInfo.order_date;
+      }
+  
+    } else {
+      productList.innerHTML = "<p>Không có sản phẩm nào trong đơn hàng.</p>";
+    }
+  </script>  
+</body>
+</html>

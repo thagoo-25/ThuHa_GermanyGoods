@@ -1,0 +1,146 @@
+[
+    {
+        "name": "Collagen Thủy Phân Doppelherz 11.000 Plus",
+        "price": "1,150,000₫",
+        "image": "/img/products/Collagen Thủy Phân Doppelherz Kollagen 11.000 Plus.jpg",
+        "category": "CHĂM SÓC DA"
+    },
+    {
+        "name": "Kem Bôi Giãn Tĩnh Mạch Abtei Venen Aktiv",
+        "price": "230,000₫",
+        "image": "/img/products/Kem Bôi Giãn Tĩnh Mạch Abtei Venen Aktiv.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Kem Đánh Răng Signal Cho Bé 0-6 Tuổi",
+        "price": "75,000₫",
+        "image": "/img/products/Kem Đánh Răng Signal Cho Bé 0-6 Tuổi.jpg",
+        "category": "EM BÉ"
+    },
+    {
+        "name": "Lăn Khử Mùi Loreal Men Expert Barber CLub",
+        "price": "125,000₫",
+        "image": "/img/products/Lăn Khử Mùi Loreal Men Expert Barber CLub.jpg",
+        "category": "CHĂM SÓC"
+    },
+    {
+        "name": "Lăn Khử Mùi Loreal Men Expert Invincible Sport 96h",
+        "price": "125,000₫",
+        "image": "/img/products/Lăn Khử Mùi Loreal Men Expert Invincible Sport 96h.jpg",
+        "category": "CHĂM SÓC"
+    },
+    {
+        "name": "Omega 3 Nhuyễn Thể Mivolis Premium",
+        "price": "420,000₫",
+        "image": "/img/products/Omega 3 Nhuyễn Thể Mivolis Premium.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Siro Ho Prospan",
+        "price": "240,000₫",
+        "image": "/img/products/Siro Ho Prospan.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Sữa Bột Ensure Vanille Geschmack",
+        "price": "880,000₫",
+        "image": "/img/products/Sữa Bột Ensure Vanille Geschmack.jpg",
+        "category": "EM BÉ"
+    },
+    {
+        "name": "Sữa Rửa Mặt Garnier Hautklar 3in1 Dành Cho Da Mụn & Bị Nhờn",
+        "price": "320,000₫",
+        "image": "/img/products/Sữa Rửa Mặt Garnier Hautklar 3in1 Dành Cho Da Mụn & Bị Nhờn.jpg",
+        "category": "CHĂM SÓC"
+    },
+    {
+        "name": "Thuốc Bổ Gan Zirkulin Leber Vital Liều Cao",
+        "price": "500,000₫",
+        "image": "/img/products/Thuốc Bổ Gan Zirkulin Leber Vital Liều Cao.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Thuốc Bổ Não Doppelherz Aktiv Ginkgo",
+        "price": "540,000₫",
+        "image": "/img/products/Thuốc Bổ Não Doppelherz Aktiv Ginkgo.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Thuốc Dạ Dày Iberogast Điều Trị Rối Loạn Tiêu Hóa",
+        "price": "450,000₫",
+        "image": "/img/products/Thuốc Dạ Dày Iberogast Điều Trị Rối Loạn Tiêu Hóa.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Thuốc Giải Độc Gan Silymarin Stada 109mg",
+        "price": "650,000₫",
+        "image": "/img/products/Thuốc Giải Độc Gan Silymarin Stada 109mg Cho Bệnh Viêm Gan Mãn Tính, Xơ Gan.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Thuốc Mọc Tóc Merz Spezial Haar Activ",
+        "price": "820,000₫",
+        "image": "/img/products/Thuốc Mọc Tóc Merz Spezial Haar Activ.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Thuốc Tăng Cường Sinh Lý Sanct Bernhard Austern Maca",
+        "price": "1.320,000₫",
+        "image": "/img/products/Thuốc Tăng Cường Sinh Lý Sanct Bernhard Austern Maca.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Tinh Dầu Bạc Hà Mivolis Japanisches Heilpflanzenol",
+        "price": "320,000₫",
+        "image": "/img/products/Tinh Dầu Bạc Hà Mivolis Japanisches Heilpflanzenol.jpg",
+        "category": "CHĂM SÓC"
+    },
+    {
+        "name": "Viên Đường Ăn Kiêng Mivolis Substoff",
+        "price": "510,000₫",
+        "image": "/img/products/Viên Đường Ăn Kiêng Mivolis Substoff.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Viên Nang Dầu Cá Doppelherz Omega 3 Seefischol 1000",
+        "price": "320,000₫",
+        "image": "/img/products/Viên Nang Dầu Cá Doppelherz Omega 3 Seefischol 1000.jpg",   
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Viên Nang Dưỡng Da Balea Q10",
+        "price": "320,000₫",
+        "image": "/img/products/Viên Nang Dưỡng Da Balea Q10.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Viên Nang Dưỡng Da Diadermine Giảm Nếp Nhăn",
+        "price": "320,000₫",
+        "image": "/img/products/Viên Nang Dưỡng Da Diadermine Giảm Nếp Nhăn.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Viên Sủi Mivolis Vitamin C",
+        "price": "320,000₫",
+        "image": "/img/products/Viên Sủi Mivolis Vitamin C.jpg",
+        "category": " THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Viên Sủi Mivolis Vitamin Tổng Hợp",
+        "price": "320,000₫",
+        "image": "/img/products/Viên Sủi Mivolis Vitamin Tổng Hợp.jpg",
+        "category": "   THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Viên Uống Doppelherz Aktiv Meno Cân Bằng Nội Tiết Tố Nữ",
+        "price": "320,000₫",
+        "image": "/img/products/Viên Uống Doppelherz Aktiv Meno Cân Bằng Nội Tiết Tố Nữ.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    },
+    {
+        "name": "Vitamin D Fluoretten 500 IE Cho Trẻ Sơ Sinh Và Trẻ Nhỏ",
+        "price": "320,000₫",
+        "image": "/img/products/Vitamin D Fluoretten 500 IE Cho Trẻ Sơ Sinh Và Trẻ Nhỏ.jpg",
+        "category": "THỰC PHẨM CHỨC NĂNG"
+    }
+]

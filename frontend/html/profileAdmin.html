@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cơ bản</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/profileAdmin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">GERMAN GOODS</div>
+        <div class="header-right">
+            <i class="fa fa-bell"></i>
+            <span>Thông báo</span>
+            <div class="profile-header" id="admin-info">
+                <span id="default-name">adminname</span>
+                <!-- Hiển thị adminname + icon list khi đăng nhập -->
+            <span id="admin-Info">
+                <span id="adminname"></span>
+                <i id="menu-icon" class="fas fa-list" style="margin-right: 5px;" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="admin-dropdown" class="dropdown-menu">
+                <a href="">Nâng cao</a>
+                <a href="">Cài đặt</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile" id="fullName-info">
+                <div class="avatar"></div>
+                <p id="profile-name"></p>
+                <a href="#" style="color: white;">Sửa Hồ Sơ</a>
+            </div>
+           
+            <nav>
+                <ul>
+                    <li><i class="fa fa-list"></i> <a href="/frontend/html/manageProduct.html" style="color: white;"> Danh mục sản phẩm</a></li>
+                    <li><i class="fa fa-box"></i> Sản phẩm</li>
+                    <li><i class="fa fa-shopping-cart"></i> <a href="/frontend/html/manageOrder.html" style="color: white;"> Đơn hàng </a></li>
+                    <li><i class="fa fa-user"></i> Tài khoản khách hàng</li>
+                    <li><i class="fa fa-users"></i> Nhân viên</li>
+                    <li><i class="fa fa-exchange-alt"></i> Xuất nhập hàng hóa</li>
+                    <li><i class="fa fa-undo"></i> Đổi hàng</li>
+                    <li><i class="fa fa-chart-line"></i> Báo cáo thống kê</li>
+                    <li><i class="fa fa-cog"></i> Cài đặt</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div class="info-card">
+                <h2>Thông tin cơ bản</h2>
+                <div class="info-container">
+                <form id="updateProfileForm">
+                    <label>Họ và tên:</label>
+                    <input type="text" id="full_name" placeholder="Thanh Trung">
+                    
+                    <label>Email:</label>
+                    <input type="email" id="email" placeholder="aaaaaaa@gmail.com">
+                    
+                    <label>Số điện thoại:</label>
+                    <input type="text" id="phone_number" placeholder="056231999">
+                    
+                    <label>Ngày sinh:</label>
+                    <input type="date" id="dob" placeholder="1996-03-18">
+                    
+                    <label>Địa chỉ:</label>
+                    <input type="text" id="address" placeholder="84 Hai Bà Trưng">
+                    
+                    <label>Vai trò:</label>
+                    <select>
+                        <option id="role" selected>Nhân viên kho</option>
+                    </select>
+                    
+                    <div id="notification" style="display: none; padding: 10px; margin-top: 10px; margin-bottom: 10px;"></div>
+                    <button type="submit">LƯU THÔNG TIN</button>
+                </form>
+                <div class="image-upload">
+                    <img id="avatar-preview" class="avatar-preview" alt="Avatar" src="">
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <script src="../js/updateProfileAdmin.js"></script>
+        </main>       
+    </div>
+</body>
+</html>

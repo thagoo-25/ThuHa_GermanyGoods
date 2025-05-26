@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/updateProduct.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">GERMAN GOODS</div>
+        <div class="header-right">
+            <i class="fa fa-bell"></i>
+            <span>Thông báo</span>
+            <div class="profile-header" id="admin-info">
+                <span id="default-name">adminname</span>
+                <!-- Hiển thị adminname + icon list khi đăng nhập -->
+            <span id="admin-Info">
+                <span id="adminname"></span>
+                <i id="menu-icon" class="fas fa-list" style="margin-right: 5px;" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="admin-dropdown" class="dropdown-menu">
+                <a href="">Nâng cao</a>
+                <a href="">Cài đặt</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile" id="fullName-info">
+                <div class="avatar"></div>
+                <p id="profile-name"></p>
+                <a href="#" style="color: white;">Sửa Hồ Sơ</a>
+            </div>
+           
+            <nav>
+                <ul>
+                    <li><i class="fa fa-list"></i> <a href="/frontend/html/manageProduct.html" style="color: white;"> Danh mục sản phẩm</a></li>
+                    <li><i class="fa fa-box"></i> Sản phẩm</li>
+                    <li><i class="fa fa-shopping-cart"></i> Đơn hàng</li>
+                    <li><i class="fa fa-user"></i> Tài khoản khách hàng</li>
+                    <li><i class="fa fa-users"></i> Nhân viên</li>
+                    <li><i class="fa fa-exchange-alt"></i> Xuất nhập hàng hóa</li>
+                    <li><i class="fa fa-undo"></i> Đổi hàng</li>
+                    <li><i class="fa fa-chart-line"></i> Báo cáo thống kê</li>
+                    <li><i class="fa fa-cog"></i> Cài đặt</li>
+                </ul>
+            </nav>
+        </aside>
+
+        
+        <main class="content">
+            <h4>Thông tin cơ bản</h4>
+            <div class="product-tab-content">
+                
+        
+                <div class="form-group">
+                    <label class="required">Hình ảnh sản phẩm</label>
+                    <div class="row">
+                        <div class="col-xs-2 thumbnail-preview">
+                            <img id="product-image" src="" class="img-thumbnail">
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-default"><i class="fa fa-plus"></i> Thêm hình ảnh</button>
+                            <input type="file" id="image-input" style="display: none;" onchange="handleImageUpload(event)">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label class="required">Ảnh bìa</label>
+                    <input type="file" class="form-control">
+                </div>
+        
+                <div class="form-group">
+                    <label class="required">Video sản phẩm</label>
+                    <input type="file" class="form-control">
+                    <p class="help-block">Kích thước tối đa 30MB, định dạng MP4.</p>
+                </div>
+        
+                <div class="form-group">
+                    <label class="required">Tên sản phẩm</label>
+                    <input id="product-name" type="text" class="form-control" placeholder="Kem Dưỡng Da Loreal Giảm Mờ Nếp Nhăn Tuổi 45+, 50 ml">
+                </div>
+        
+                <div class="form-group">
+                    <label  class="required">Ngành hàng</label>
+                    <input id="product-category" type="text" class="form-control" placeholder="Chăm Sóc & Nước Hoa, Chăm Sóc Da Mặt, Kem Dưỡng Da Chống Lão Hóa">
+                </div>
+        
+                <div class="form-group">
+                    <label class="required">Mô tả sản phẩm</label>
+                    <textarea id="product-description" class="form-control" rows="10" placeholder="Kem dưỡng da Loreal Anti Falten Experte 45+ giảm mờ nếp nhăn tuổi 45+, 50ml
+                
+                Kem dưỡng da Loreal Anti Falten Experte 45+ là dòng kem dưỡng mới ra mắt năm 2016 của Loreal Paris. Được phát triển từ dòng kem dưỡng da Loreal Collagen Anti-Falten đã được tin dùng từ lâu.
+                
+                Các nhà nghiên cứu của Loreal Paris đã tạo nên dòng sản phẩm mới. Bổ sung thành phần dưỡng chất phù hợp nhất dành riêng nhu cầu của làn da theo từng độ tuổi. Giúp làm giảm:
+                - Kem dưỡng da Loreal Anti Falten Experte 35+ Collagen
+                - Kem dưỡng da Loreal Anti Falten Experte 45+ Retinol peptide
+                - Kem dưỡng da Loreal Anti Falten Experte 55+ Calcium"></textarea>
+                </div>
+                
+            </div>
+
+            <h4>Thông tin chi tiết</h4>
+            <div class="form-group">
+                <label class="required">Thương hiệu</label>
+                <input id="brand" type="text" class="form-control" placeholder="Loreal Paris">
+            </div>
+    
+            <div class="form-group">
+                <label class="required">Xuất xứ</label>
+                <input id="origin" type="text" class="form-control" placeholder="Pháp">
+            </div>
+
+            <div class="form-group">
+                <label class="required">Giá:</label>
+                <input id="product-price" type="text" class="form-control" placeholder="200.000">
+            </div>
+
+            <div class="form-group">
+                <label class="required">Khuyến mãi:</label>
+                <input id="product-promotion" type="text" class="form-control" placeholder="200.000">
+            </div>
+
+            <h4>Vận chuyển</h4>
+
+            <div class="form-group label-switch-group">
+                <label class="required">Thiết lập cân nặng & kích thước cho từng phân loại</label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="form-group label-switch-group">
+                <label class="required">Cân nặng (Sau khi đóng gói)</label>
+                <input class="form" type="number" id="weight" value="200" />
+            </div>
+
+            <div class="form-group">
+                <label class="required">Kích thước đóng gói</label>
+                <div class="dimension-inputs label-switch-group">
+                    <input class="form" type="text" placeholder="R" /> cm ×
+                    <input class="form" type="text" placeholder="D" /> cm ×
+                    <input class="form" type="text" placeholder="C" /> cm
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Phí vận chuyển</label>
+                <div class="shipping-method">
+                    <div class="method-row label-switch-group">
+                        <span>Hàng Cồng Kềnh</span>
+                        <div>
+                        <span>₫16.500</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </div>
+                        </label>
+                    </div>
+                    <div class="method-row label-switch-group">
+                        <span>Tiết Kiệm</span>
+                        <div>
+                        <span>₫13.500</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </div>
+                        </label>
+                    </div>
+                    <div class="method-row label-switch-group">
+                        <span>Nhanh</span>
+                        <div>
+                        <span>₫16.500</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </div>
+                        </label>
+                    </div>
+                    <div class="method-row label-switch-group">
+                        <span>Hỏa Tốc</span>
+                        <div>
+                        <span>₫22.000</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-form-actions">
+                <button type="button" id="publish-product">Cập nhật thông tin sản phẩm</button>
+                <button type="button" id="preview-product">Xem thử</button>
+            </div>
+            
+            <div id="notification" style="display: none;"></div>
+        </main>
+
+        
+    </div>
+
+    <script src="/frontend/js/updateProduct.js"></script>
+</body>
+</html>

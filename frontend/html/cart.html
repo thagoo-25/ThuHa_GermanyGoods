@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Croissant+One&family=Oswald:wght@300;400&family=Jost:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+<header>
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <div class="left">Hàng Xách Tay Chính Hãng - Cam Kết Chất Lượng Sản Phẩm</div>
+        <div class="right">
+            <span><i class="fas fa-bell"></i> Thông báo</span>
+            <span>Khám phá <i class="fas fa-chevron-down"></i></span>
+            <span onclick="myFunction()">Hỗ trợ </span>
+            <span><i class="fas fa-shopping-cart"></i></span>
+            <button class="login-btn" onclick="window.location.href='/frontend/html/logInUser.html'">ĐĂNG NHẬP</button>
+            <!-- Hiển thị username + icon list khi đăng nhập -->
+            <span id="user-info">
+                <span id="username"></span>
+                <i id="menu-icon" class="fas fa-list" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="user-dropdown" class="dropdown-menu">
+                <a href="/frontend/html/profileUser.html">Tài khoản của tôi</a>
+                <a id="view-orders-link">Đơn hàng</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="main-nav">
+        <div class="logo"> <a href="/frontend/html/homepage.html"> <img src="/img/images/486787966_4130636110595078_1488103149900971596_n-removebg-preview.png" alt="Logo"> </a> </div>
+        <h1>Giỏ Hàng</h1>
+        <div class="search-container">
+            <input type="text" class="search-box" id="search-box" placeholder="Tìm kiếm...">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>  
+        <div id="search-results"></div>      
+    </div>
+</header>
+
+<!-- Giỏ hàng -->
+<div class="cart-container">
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>Sản Phẩm</th>
+                <th>Đơn Giá</th>
+                <th>Số Lượng</th>
+                <th>Số Tiền</th>
+                <th>Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-stock="10" data-cart-id="123" data-product-id="MIV0091N0070">
+                <td><input type="checkbox"></td>
+                <td>
+                    <div class="product">
+                        <img src="/img/products/Collagen Thủy Phân Doppelherz Kollagen 11.000 Plus.jpg" alt="Sản phẩm">
+                        <span>Dầu dưỡng tóc L'Oreal 100ml</span>
+                    </div>
+                </td>
+                <td><del>299.000₫</del> <strong>229.000₫</strong></td>
+                <td>
+                    <div class="quantity-control">
+                        <button class="decrease" data-id="${item.cart_id}">-</button>
+                        <input  type="text" inputmode="numeric" pattern="\d*" class="qty-input" value="3" data-old="3">
+                        <button class="increase" data-id="${item.cart_id}">+</button>
+                    </div>
+                </td>
+                <td><strong>687.000₫</strong></td>
+                <td><span class="remove" data-product-id="MIV0091N0070" data-cart-id="123">Xóa</span></td>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal xác nhận xóa -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: #ffff;">
+        <div class="modal-header">
+          <h4 class="modal-title">Xóa sản phẩm</h4>
+        </div>
+        <div class="modal-body">
+          <p>Bạn có chắc muốn xóa <span id="product-id"></span>? <br>
+          <strong>Lưu ý:</strong> Sau khi xóa, bạn không thể hoàn tác hay khôi phục sản phẩm.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <!-- Voucher -->
+    <div class="voucher">
+        Voucher giảm 140k - <a href="#">Xem thêm voucher</a>
+    </div>
+</div>
+
+<!-- Tổng tiền -->
+<div class="cart-container-2">
+<div class="cart-footer">
+    <div>
+        <input type="checkbox" class="product-checkbox" value="ID_San_Pham"> <span>Chọn tất cả (0)</span> | <span class="remove">Xóa</span>
+    </div>
+    <div class="total-price" id="total-amount">
+        Tổng cộng (1 Sản phẩm): <strong>687.000₫</strong>
+    </div>
+    <button id="checkoutBtn" class="checkout-button">Mua Hàng</button>
+</div>
+</div>
+
+<!-- Có thể bạn sẽ thích -->
+<section class="product-section">
+    <div class="section-title">
+        <h2>CÓ THỂ BẠN THÍCH</h2>
+    </div>
+    <div class="product-grid" id="best-seller"></div> <!-- Thêm ID -->
+</section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="about">
+                <h3>ABOUT US</h3>
+                <p>Kênh xách tay Đức là website bán lẻ online các sản phẩm xách tay Đức với giá tốt nhất.</p>
+                <p>📞 0917896568</p>
+                <p>📞 0988828486</p>
+            </div>
+            <div class="customer-support">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <ul>
+                    <li>Hướng dẫn mua hàng</li>
+                    <li>Chính sách giao hàng</li>
+                    <li>Chính sách đổi/trả hàng</li>
+                    <li>Điều khoản sử dụng</li>
+                </ul>
+            </div>
+            <div class="reviews">
+                <h3>ĐÁNH GIÁ MỚI NHẤT</h3>
+                <ul>
+                    <li>Kem tẩy lông Beleza, 125ml</li>
+                    <li>Bột khử mùi hôi chân, 100g</li>
+                    <li>Sữa rửa mặt Neutrogena, 150ml</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © Bản quyền thuộc về Kênh Xách Tay Đức
+        </div>
+    </footer>
+
+    <script src="/frontend/js/cart.js"></script>
+
+</body>
+</html>

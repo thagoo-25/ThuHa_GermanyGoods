@@ -1,0 +1,450 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white; /* Giữ nền để không bị trong suốt */
+    z-index: 1000; /* Đảm bảo header luôn ở trên */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+}
+
+/* Top Navigation */
+.left {
+    font-weight: 800;
+}
+header .right {
+    margin-right: 35px;
+}
+nav ul {
+    margin-bottom: 0 !important;
+}
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a40000;
+    color: white;
+    padding: 4px 20px;
+}
+.top-nav .right span {
+    margin: 0 10px;
+    cursor: pointer;
+}
+.login-btn {
+    background: #121A4F;
+    font-weight: 400;
+    color: white;
+    padding: 5px 15px;
+    border: 2px solid #121A4F;
+    border-radius: 8px; /* Bo góc để mềm mại hơn */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Hiệu ứng mượt hơn khi hover */
+}
+
+.login-btn:hover {
+    background: #1E2A6A; /* Màu tối hơn khi hover */
+}
+
+/* Định dạng chung cho phần user info */
+header #user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Phần hiển thị tên người dùng */
+header #username {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Icon danh sách bên cạnh username */
+header #user-info i {
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho icon */
+header #user-info i:hover {
+    color: #faeceb;
+}
+
+/* Định dạng dropdown menu */
+header #user-dropdown {
+    display: none; /* Mặc định ẩn */
+    position: absolute;
+    top: 100%;  /* Đưa xuống dưới icon một chút */
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+}
+
+/* Khi có class 'show', hiển thị dropdown */
+header #user-dropdown.show {
+    display: flex;
+}
+
+/* Thiết lập giao diện cho từng mục */
+header #user-dropdown a {
+    display: block;
+    padding: 12px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+/* Hiệu ứng khi hover */
+header #user-dropdown a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Loại bỏ border-bottom ở mục cuối */
+header #user-dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 50px;
+    background: #f8cfcf;
+}
+.main-nav .logo img {
+    height: 25px;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+.main-nav .search-container {
+    display: flex;
+    align-items: center;
+    background: white; /* Nền trắng cho thanh search */
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #f8cfcf; /* Viền màu hồng nhẹ */
+    width: 600px;
+}
+
+.main-nav .search-box {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+}
+
+.main-nav .search-icon {
+    background: #8B0000; /* Màu đỏ đậm */
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.main-nav .search-icon i {
+    color: white;
+    font-size: 16px;
+}
+
+.main-nav h1 {
+    color: #8B0000;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* ----- GIỎ HÀNG ----- */
+.cart-container {
+    margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- BẢNG SẢN PHẨM ----- */
+/*.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, 
+.cart-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.cart-table th {
+    background: #f9f9f9;
+}*/
+
+/* ----- SẢN PHẨM ----- */
+.product {
+    display: flex;
+    align-items: center;
+}
+
+.product img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* ----- NÚT SỐ LƯỢNG ----- */
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    padding: 5px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-control input {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+}
+
+/* ----- XÓA SẢN PHẨM ----- */
+.remove {
+    color: red;
+    cursor: pointer;
+}
+
+/* ----- VOUCHER ----- */
+.voucher {
+    background: #fffae6;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* ----- TỔNG TIỀN ----- */
+.cart-container-2 {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkout-button {
+    background: #8F1616;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkout-button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+}
+
+/* ----- CHO BẢNG CỦA GIỎ HÀNG ----- */
+.cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-container th, 
+.cart-container td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.cart-container th {
+    background: #f9f9f9;
+}
+
+/* ----- CÁC NÚT THAO TÁC Ở CUỐI CÙNG ----- */
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.cart-footer input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.cart-footer .remove {
+    cursor: pointer;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*Có thể bạn sẽ thích*/
+/* Product Section */
+.product-section {
+    padding: 20px;
+
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    background: #a40000;
+    color: white;
+    padding: 5px 10px;
+}
+
+.section-title a {
+    color: #8F1616;
+    font-weight: 600; /* Medium bold */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 50px;
+}
+
+.product-section .product-box {
+    height: 300px;
+    padding: 10px 10px 50px 10px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-section .product-box:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;*/
+    border-radius: 8px;
+}
+
+.product-name {
+    text-align: left;
+    font-size: 12px;
+    margin: 2px 0;
+}
+
+.product-price {
+    text-align: left;
+    font-size: 11px;
+    color: #a40000;
+    font-weight: bold;
+}
+
+.product-category {
+    text-align: left;
+    color: #9a9a9a;
+    font-size: 12px;
+    padding: 0;
+    margin: 3px 0 3px 0px;
+}
+
+/* Footer */
+footer {
+    background: #a40000;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content div {
+    width: 30%;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Thẻ xóa sản phẩm */
+.modal.fade .modal-dialog {
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.qty-error {
+    color: #e74c3c;      /* đỏ nổi bật */
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  
+
+  /* Toast cơ bản */
+.toast {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  .toast.error { background: #e74c3c; }
+  /* hiệu ứng fade-out */
+  .toast.fade-out { opacity: 0; }
+  

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/manageProduct.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">GERMAN GOODS</div>
+        <div class="header-right">
+            <i class="fa fa-bell"></i>
+            <span>Thông báo</span>
+            <div class="profile-header" id="admin-info">
+                <span id="default-name">adminname</span>
+                <!-- Hiển thị adminname + icon list khi đăng nhập -->
+            <span id="admin-Info">
+                <span id="adminname"></span>
+                <i id="menu-icon" class="fas fa-list" style="margin-right: 5px;" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="admin-dropdown" class="dropdown-menu">
+                <a href="">Nâng cao</a>
+                <a href="">Cài đặt</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile" id="fullName-info">
+                <div class="avatar"></div>
+                <p id="profile-name"></p>
+                <a href="#" style="color: white;">Sửa Hồ Sơ</a>
+            </div>
+           
+            <nav>
+                <ul>
+                    <li><i class="fa fa-list"></i> Danh mục sản phẩm</li>
+                    <li><i class="fa fa-box"></i> Sản phẩm</li>
+                    <li><i class="fa fa-shopping-cart"></i> <a href="/frontend/html/manageOrder.html" style="color: white;"> Đơn hàng </a></li>
+                    <li><i class="fa fa-user"></i> Tài khoản khách hàng</li>
+                    <li><i class="fa fa-users"></i> Nhân viên</li>
+                    <li><i class="fa fa-exchange-alt"></i> Xuất nhập hàng hóa</li>
+                    <li><i class="fa fa-undo"></i> Đổi hàng</li>
+                    <li><i class="fa fa-chart-line"></i> Báo cáo thống kê</li>
+                    <li><i class="fa fa-cog"></i> Cài đặt</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div class="product-header">
+            <div class="tabs">
+                <span class="tab active">Tất cả <span class="count">(100)</span></span>
+                <span class="tab">Đã đăng <span class="count">(509)</span></span>
+                <span class="tab">Bản nháp <span class="count">(12)</span></span>
+                <span class="dot"></span>
+                <span class="tab">Lọc sản phẩm</span>
+            </div>
+
+        <div class="manage-product">
+            <button class="add-button">Cài đặt sản phẩm</button>
+            <button id="add-product-button" class="add-button">+ Thêm sản phẩm mới</button>
+            <div id="notification" style="display: none; padding: 10px; margin-top: 10px; border-radius: 5px;"></div>
+        </div>
+
+        
+    </div>
+    
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>ID sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th class="sortable-column">
+                        <span class="title-with-icons">
+                            Doanh số
+                            <i class="fas fa-question-circle" title="Tổng doanh số sản phẩm"></i>
+                        </span>
+                        <span class="sort-icons">
+                            <i class="fas fa-caret-up"></i>
+                            <i class="fas fa-caret-down"></i>
+                        </span>
+                    </th>
+                    <th>Giá</th>
+                    <th>Kho hàng</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>MV0091N0070</td>
+                    <td class="product-info">
+                        <img src="/img/products/Kem Bôi Giãn Tĩnh Mạch Abtei Venen Aktiv.jpg" alt="Sản phẩm">
+                        <div>
+                            <strong>Tinh Dầu Bạc Hà Mivolis Tinh Dầu Bạc Hà Mivolis</strong>
+                        </div>
+                    </td>
+                    <td>9.1k</td>
+                    <td>135.000 đ <span class="discount">5 Ưu đãi</span></td>
+                    <td>121.5k</td>
+                    <td>
+                        <a href="/frontend/html/updateProduct.html?id=${product.product_id}">Cập nhật</a> | 
+                        <a href="#" class="remove" data-id="MV0091N0070">Xóa</a>
+                    </td>                      
+                </tr>
+            </tbody>
+        </table>  
+        
+        <!-- Modal xác nhận xóa (chỉ cần đặt một lần ở cuối trang) -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: #ffff;">
+        <div class="modal-header">
+          <h4 class="modal-title">Xóa sản phẩm</h4>
+        </div>
+        <div class="modal-body">
+          <p>Bạn có chắc muốn xóa sản phẩm này? <br>
+          <strong>Lưu ý:</strong> Sau khi xóa, bạn không thể hoàn tác hay khôi phục sản phẩm.</p>
+          <p><strong>ID Sản phẩm:</strong> <span id="product-id"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+
+ <!-- Modal Thêm Sản Phẩm -->
+<div id="productModal" class="product-form-container" style="display: none;">
+    <span id="close-form" class="close-button">&times;</span>
+    <form id="addProductForm" class="product-form" enctype="multipart/form-data">
+      <h3>Thêm Sản Phẩm Mới</h3>
+  
+      <label for="product-name">Tên sản phẩm:</label>
+      <input type="text" id="product-name" name="product_name" placeholder="Nhập tên sản phẩm">
+  
+      <label for="product-description">Mô tả sản phẩm:</label>
+      <textarea id="product-description" name="product_description" placeholder="Nhập mô tả"></textarea>
+  
+      <label for="product-category">Phân loại ngành hàng:</label>
+      <select id="product-category" name="category_id">
+      </select>
+      <!--<input type="text" id="product-category" name="category_id"></input>-->   
+  
+      <label for="product-price">Giá:</label>
+      <input type="number" id="product-price" name="price" placeholder="Giá bán" min="1" step="1" required>
+  
+      <label for="product-stock">Kho hàng:</label>
+      <input type="number" id="product-stock" name="quantity" placeholder="Số lượng" min="0" step="1" required>
+  
+      <label for="product-image">Ảnh sản phẩm:</label>
+      <input type="file" id="product-image" name="image">
+  
+      <div class="product-form-actions">
+        <button type="submit" id="publish-product">Đăng</button>
+        <button type="button" id="save-draft">Lưu bản nháp</button>
+        <button type="button" id="preview-product">Xem thử</button>
+      </div>
+    </form>
+  </div>  
+        </div>
+        </main>
+    </div>
+
+    <script src="/frontend/js/manageProduct.js"></script>
+</body>
+</html>

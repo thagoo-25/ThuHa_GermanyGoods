@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Germany Good</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/order.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Croissant+One&family=Oswald:wght@300;400&family=Jost:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+    <!-- Navigation Bar -->
+<header>
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <div class="left">Hàng Xách Tay Chính Hãng - Cam Kết Chất Lượng Sản Phẩm</div>
+        <div class="right">
+            <span><i class="fas fa-bell"></i> Thông báo</span>
+            <span><i class="fas fa-bell"></i> Cài đặt</span>
+            <span>Khám phá <i class="fas fa-chevron-down"></i></span>
+            <span onclick="myFunction()">Hỗ trợ </span>
+            <a href="/frontend/html/cart.html" style="color:white;"><span><i class="fas fa-shopping-cart"></i></span></a>
+            <button class="login-btn" onclick="window.location.href='/frontend/html/logInUser.html'">ĐĂNG NHẬP</button>
+            <!-- Hiển thị username + icon list khi đăng nhập -->
+            <span id="user-info">
+                <span id="username"></span>
+                <i id="menu-icon" class="fas fa-list" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="user-dropdown" class="dropdown-menu">
+                <a href="/frontend/html/profileUser.html">Tài khoản của tôi</a>
+                <a id="view-orders-link">Đơn hàng</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+        </div>
+    </div>
+    
+    <!-- Main Navigation Bar -->
+    <div class="main-nav">
+        <div class="logo"> <a href="/frontend/html/homepage.html"> <img src="/img/images/486787966_4130636110595078_1488103149900971596_n-removebg-preview.png" alt="Logo"> </a> </div>
+        <h1>Thanh Toán Đơn Hàng</h1>   
+    </div>
+</header>
+<body>
+  <div id="notification" style="display:none; position: fixed; top: 20px; right: 20px; z-index: 9999; padding: 10px 20px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-weight: bold;"></div>
+  <div class="container">
+    <div class="address">
+      <h2>Địa Chỉ Nhận Hàng</h2>
+      <div class="flex-row">
+        <strong id="display-name-phone">Chưa có thông tin</strong>
+        <span class="label" id="edit-address">Thay đổi</span>
+      </div>
+      <div id="display-address">Chưa có địa chỉ</div>
+    </div>
+
+    <div class="product-card">
+      <h2>Sản phẩm</h2>
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="product">
+                <img src="" alt="">
+                <div class="details">
+                  <div class="title">Tinh Dầu Bạc Hà Mivolis Japanisches Heilpflanzenol, 30 ml</div>
+                </div>
+              </div>
+            </td>
+            <td>135.000</td>
+            <td>1</td>
+            <td>135.000</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product">
+                <img src="" alt="">
+                <div class="details">
+                  <span class="gift">🎁 Quà tặng</span><br>
+                  Kem Xoa Bóp Giảm Đau Mivolis Pferdesalbe, 200 ml
+                </div>
+              </div>
+            </td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <h2>Lời nhắn</h2>
+      <input type="text" placeholder="Lưu ý cho Người bán...">
+    </div>
+
+    <div class="flex-row">
+      <span>Phương thức vận chuyển:</span>
+      <span id="shipping-method">Quốc tế (đ40.000)</span>
+    </div>
+
+    <div class="payment-methods">
+      <h2>Phương thức thanh toán</h2>
+      <!--<button>Thẻ Tín dụng/Ghi nợ</button>
+      <button>Google Pay</button>
+      <button>Ví ShopeePay</button>-->
+      <button class="selected">Thanh toán khi nhận hàng</button>
+    </div>
+
+    <div class="summary">
+      <div class="flex-row"><span>Tổng tiền hàng:</span><span>đ129.000</span></div>
+      <div class="flex-row"><span>Phí vận chuyển:</span><span>đ37.700</span></div>
+      <div class="flex-row"><span>Voucher giảm giá:</span><span>-đ15.000</span></div>
+      <div class="flex-row"><span><strong>Tổng thanh toán:</strong></span><span>đ151.700</span></div>
+    </div>
+
+    <div class="submit">
+      <button id="orderButton">Đặt hàng</button>
+    </div>
+  </div>
+
+  <!-- Nút mở modal -->
+<!--<button data-toggle="modal" data-target="#addressModal">Cập nhật địa chỉ</button>-->
+
+<!-- Modal -->
+<div id="addressModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Nội dung modal-->
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: none;">
+        <h4 class="modal-title">Cập nhật địa chỉ</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <label>Họ và tên<span style="color: red">*</span></label>
+            <input type="text" class="form-control" placeholder="Họ và tên" id="fullName">
+          </div>
+          <div class="col-sm-6">
+            <label>Số điện thoại<span style="color: red">*</span></label>
+            <input type="text" class="form-control" placeholder="Số điện thoại" id="phone">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tỉnh/ Thành phố, Quận/Huyện, Phường/Xã<span style="color: red">*</span></label>
+          <input type="text" class="form-control" placeholder="Tỉnh/ Thành phố, Quận/Huyện, Phường/Xã" id="region">
+        </div>
+
+        <div class="form-group">
+          <label>Địa chỉ cụ thể<span style="color: red">*</span></label>
+          <input type="text" class="form-control" placeholder="Địa chỉ cụ thể" id="specific">
+        </div>
+
+
+        <div class="checkbox">
+          <label><input type="checkbox" disabled checked> Đặt làm địa chỉ mặc định</label>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Trở Lại</button>
+        <button id="saveAddressBtn" type="button" class="btn btn-danger">Hoàn thành</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <script src="/frontend/js/order.js"></script>
+</body>
+</html>

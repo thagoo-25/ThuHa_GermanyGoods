@@ -1,0 +1,22 @@
+{
+  "name": "thuha_germanygoods",
+  "version": "1.0.0",
+  "description": "my first app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thagoo-25/ThuHa_GermanyGoods.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thagoo-25/ThuHa_GermanyGoods/issues"
+  },
+  "homepage": "https://github.com/thagoo-25/ThuHa_GermanyGoods#readme",
+  "dependencies": {
+    "thuha_germanygoods": "file:"
+  }
+}
