@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cơ bản</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/orderDetail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">GERMAN GOODS</div>
+        <div class="header-right">
+            <i class="fa fa-bell"></i>
+            <span>Thông báo</span>
+            <div class="profile-header" id="admin-info">
+                <span id="default-name">adminname</span>
+                <!-- Hiển thị adminname + icon list khi đăng nhập -->
+            <span id="admin-Info">
+                <span id="adminname"></span>
+                <i id="menu-icon" class="fas fa-list" style="margin-right: 5px;" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="admin-dropdown" class="dropdown-menu">
+                <a href="">Nâng cao</a>
+                <a href="">Cài đặt</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile" id="fullName-info">
+                <div class="avatar"></div>
+                <p id="profile-name"></p>
+                <a href="#" style="color: white;">Sửa Hồ Sơ</a>
+            </div>
+           
+            <nav>
+                <ul>
+                    <li><i class="fa fa-list"></i> <a href="/frontend/html/manageProduct.html" style="color: white;"> Danh mục sản phẩm</a></li>
+                    <li><i class="fa fa-box"></i> Sản phẩm</li>
+                    <li><i class="fa fa-shopping-cart"></i> <a href="/frontend/html/manageOrder.html" style="color: white;"> Đơn hàng </a></li>
+                    <li><i class="fa fa-user"></i> Tài khoản khách hàng</li>
+                    <li><i class="fa fa-users"></i> Nhân viên</li>
+                    <li><i class="fa fa-exchange-alt"></i> Xuất nhập hàng hóa</li>
+                    <li><i class="fa fa-undo"></i> Đổi hàng</li>
+                    <li><i class="fa fa-chart-line"></i> Báo cáo thống kê</li>
+                    <li><i class="fa fa-cog"></i> Cài đặt</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+
+          <!-- Thông báo -->
+          <div id="notification" style="display: none; position: fixed; top: 20px; right: 20px; background: #ffeb3b; padding: 10px 20px; border-radius: 4px; z-index: 9999;"></div>
+          
+          <strong class="status">Tình trạng: <span></span></strong>
+          <div class="timeline" id="timeline-anchor">
+            <div class="step completed">
+              <div class="icon">📄</div>
+              <div class="label">Chờ xác nhận</div>
+            </div>
+            <div class="line"></div>
+            <div class="step completed">
+              <div class="icon">💵</div>
+              <div class="label">Chờ lấy hàng</div>
+            </div>
+            <div class="line"></div>
+            <div class="step completed">
+              <div class="icon">🚚</div>
+              <div class="label">Đang giao hàng</div>
+            </div>
+            <div class="line"></div>
+            <div class="step completed">
+              <div class="icon">📦</div>
+              <div class="label">Giao hàng thành công</div>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+              <div class="icon">⭐</div>
+              <div class="label">Đánh Giá</div>
+            </div>
+          </div>
+
+            <div class="order-detail-page" id="order-detail-wrapper">
+                <div class="order-info">
+                  <p><strong>Mã đơn hàng:</strong> 2500SH24043075</p>
+                  <p><strong>Địa chỉ nhận hàng:</strong> Trường M., 0123456789<br>tầng 11, tòa D1 Trung Long, số 3 Song Phương, Hoài Đức, Hà Nội</p>
+                  <p><strong>Thông tin vận chuyển:</strong> Nhanh - SPX Express<br>📦 Total 2 products</p>
+                </div>
+              
+                <div class="order-status">
+                  <div class="user">
+                    <img src="" alt="avatar" />
+                    <span>transden1440023</span>
+                  </div>
+                  <div class="status-buttons">
+                    <button class="btn">Theo dõi</button>
+                    <button class="btn btn-chat">Chat ngay</button>
+                  </div>
+                </div>
+              
+                <div class="payment-container">
+                    <div class="section">
+                      <div class="section-header">
+                        <span>🧾 Thông tin thanh toán</span>
+                        <a href="#">Xem lịch sử giao dịch</a>
+                      </div>
+                  
+                      <table class="product-table">
+                        <thead>
+                          <tr>
+                            <th>STT</th>
+                            <th>Sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>
+                              <div class="product">
+                                <img src="" alt="">
+                                <div class="details">
+                                  <div class="title">Tinh Dầu Bạc Hà Mivolis Japanisches Heilpflanzenol, 30 ml</div>
+                                  <div class="meta">SKU: GFF<br>ID SP: MIV0091N0070</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>135.000</td>
+                            <td>1</td>
+                            <td>135.000</td>
+                          </tr> 
+                          <tr>
+                            <td>2</td>
+                            <td>
+                              <div class="product">
+                                <img src="" alt="">
+                                <div class="details">
+                                  <span class="gift">🎁 Quà tặng</span><br>
+                                  Kem Xoa Bóp Giảm Đau Mivolis Pferdesalbe, 200 ml
+                                </div>
+                              </div>
+                            </td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  
+                    <div class="totals">
+                        <div>Tổng tiền sản phẩm: <strong>₫135.000</strong></div>
+                        <div>Tổng phí vận chuyển ước tính: <strong>₫0</strong></div>
+                        <div class="highlight">Doanh thu đơn hàng ước tính: <strong class="price">₫149.950</strong></div>
+                      </div>
+                    </div>
+                  
+                    <div class="section final">
+                      <div class="section-header">
+                        <span>💵 Số tiền cuối cùng</span>
+                      </div>
+                      <div class="summary">
+                        <p><strong>Thanh toán của Người Mua</strong></p>
+                        <div class="line">Tổng tiền sản phẩm: <span>₫149.950</span></div>
+                        <div class="line">Phí vận chuyển: <span>₫0</span></div>
+                        <div class="line">Voucher: <span>-₫12.000</span></div>
+                        <div class="line total">Tổng tiền Thanh toán: <span class="price">₫137.950</span></div>
+                      </div>
+                    </div>
+                  </div>                  
+                
+              <script src="/frontend/js/orderDetail.js" ></script>            
+        </main>              
+    </div>
+</body>
+</html>

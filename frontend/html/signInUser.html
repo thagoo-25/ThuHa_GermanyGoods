@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/signInUser.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Croissant+One&family=Oswald:wght@300;400&family=Jost:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="/img/images/img_logo_3.png" alt="German Goods Logo">
+        </div>
+        <div class="admin-link">
+            <a href="./signInAdmin.html">DÀNH CHO QUẢN TRỊ VIÊN</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="login-container">
+        <div class="row">
+            <!-- Logo + Slogan -->
+            <div class="col-md-6 left-section">
+                <img src="/img/homepgae/lgo-removebg-preview.png" alt="Logo German Goods" class="brand-logo">
+                <p>Trang thương mại điện tử được yêu thích ở Việt Nam</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="col-md-4 login-form">
+                <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
+                <form action="#" id="signupForm">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Họ và tên">
+                        </div>
+                        <div class="col-md-6 date-group">
+                            <input type="text" id="datepicker" name="dob" class="form-control date-input" placeholder="Ngày/ tháng/ năm">
+                            <i class="bi bi-calendar3 calendar-icon"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Tên đăng nhập">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Tạo mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Xác thực mật khẩu">
+                    </div>
+                    <div class="form-group checkbox-container">
+                        <input type="checkbox" id="agree" name="agree">
+                        <label for="agree">Tôi đồng ý với các điều khoản và điều kiện</label>
+                    </div>
+                    <button type="button" class="btn btn-danger login-btn" onclick="signUp()">ĐĂNG KÝ</button>
+                    <div id="notification" style="display: none; margin-top: 10px; margin-bottom: 10px;"></div>
+                </form>
+                
+            <div class="register-link">
+                Bạn đã có tài khoản? <a href="/frontend/html/logInUser.html">ĐĂNG NHẬP</a>
+            </div>
+                    <div class="social-login">
+                      <div class="divider">
+                
+                      </div>
+                      <h2>HOẶC</h2>
+                      <div class="social-buttons">
+                          <button class="btn btn-outline facebook-btn">
+                              <i class="fab fa-facebook"></i> Facebook
+                          </button>
+                          <button class="btn btn-outline google-btn">
+                              <i class="fab fa-google"></i> Google
+                          </button>
+                      </div>
+                  </div>                  
+                </form>
+            </div>
+
+            <script>
+              $(document).ready(function(){
+    $("#datepicker").datepicker({
+        dateFormat: "dd/mm/yy"
+    });
+
+    $(".calendar-icon").click(function() {
+        $("#datepicker").focus();
+    });
+});
+            </script>
+        </div>
+        <script src="../js//signInUser.js"></script>
+    </main>
+    
+</body>
+</html>

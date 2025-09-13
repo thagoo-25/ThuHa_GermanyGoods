@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="/frontend/css/product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Croissant+One&family=Oswald:wght@300;400&family=Jost:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <!-- Top Navigation Bar -->
+        <div class="top-nav">
+            <div class="left">Hàng Xách Tay Chính Hãng - Cam Kết Chất Lượng Sản Phẩm</div>
+            <div class="right">
+                <span><i class="fas fa-bell"></i> Thông báo</span>
+                <span>Khám phá <i class="fas fa-chevron-down"></i></span>
+                <span onclick="myFunction()">Hỗ trợ </span>
+                <a href="/frontend/html/cart.html" style="color: white;"><span><i class="fas fa-shopping-cart"></i></span></a>
+                <button class="login-btn" onclick="window.location.href='/frontend/html/logInUser.html'">ĐĂNG NHẬP</button>
+                <!-- Hiển thị username + icon list khi đăng nhập -->
+                <span id="user-info">
+                    <span id="username"></span>
+                    <i id="menu-icon" class="fas fa-list" onclick="myFunction()"></i>
+                    <!-- Dropdown Menu -->
+                <div id="user-dropdown" class="dropdown-menu">
+                    <a href="/frontend/html/profileUser.html">Tài khoản của tôi</a>
+                    <a id="view-orders-link">Đơn hàng</a>
+                    <a href="#" id="logout-btn">Đăng xuất</a>
+                    </div>    
+                </span>
+            </div>
+        </div>
+        
+        <!-- Main Navigation Bar -->
+        <div class="main-nav">
+            <div class="logo"> <a href="/frontend/html/homepage.html"> <img src="/img/homepgae/lgo.jpg" alt="Logo"> </a> </div>
+            <div class="search-container">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input type="text" class="search-box" id="search-box" placeholder="Search...">
+            </div>  
+            <div id="search-results"></div>      
+            <div class="contact">Liên hệ: 0396559621</div>
+        </div>
+        
+        <!-- Category Navigation -->
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    Trang điểm <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu">
+                        <div class="column">
+                            <h4>Mắt</h4>
+                            <a href="#">Phấn mắt</a>
+                            <a href="#">Bút kẻ mắt</a>
+                        </div>
+                        <div class="column">
+                            <h4>Mặt</h4>
+                            <a href="#">Kem nền</a>
+                            <a href="#">BB Cream & CC Cream</a>
+                            <a href="#">Phấn phủ</a>
+                        </div>
+                        <div class="column">
+                            <h4>Môi</h4>
+                            <a href="#">Son thỏi</a>
+                            <a href="#">Son nước</a>
+                        </div>
+                        <div class="column">
+                            <h4>Phụ kiện</h4>
+                            <a href="#">Tẩy trang</a>
+                            <a href="#">Bọt biển make up</a>
+                        </div>
+                    </div>
+                </li>                     
+                <li class="dropdown">
+                    Hộ gia đình <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu">
+                        <div class="column">
+                            <h4>Chất tẩy rửa & vệ sinh</h4>
+                            <a href="#">Vệ sinh Nhà bếp</a>
+                            <a href="#">Vệ sinh Phòng tắm & WC</a>
+                            <a href="#">Chất tẩy rửa đặc biệt</a>
+                        </div>
+                        <div class="column">
+                            <h4>Giặt ủi quần áo</h4>
+                            <a href="#">Bàn ủi & phụ kiện</a>
+                            <a href="#">Bột giặt</a>
+                            <a href="#">Phụ giặt</a>
+                            <a href="#">Vệ sinh lồng giặt</a>
+                            <a href="#">Thơm tủ quần áo</a>
+                        </div>
+                        <div class="column">
+                            <h4>Đồ gia dụng</h4>
+                            <a href="#">Dụng cụ phòng bếp</a>
+                            <a href="#">Đèn</a>
+                            <a href="#">Làm mát không khí & thơm phòng</a>
+                            <a href="#">Máy hút bụi</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    Chăm sóc và nước hoa <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu">
+                        <div class="column">
+                            <h4>Chăm sóc da mặt</h4>
+                            <a href="#">Sữa rửa mặt</a>
+                            <a href="#">Kem dưỡng da ban ngày</a>
+                            <a href="#">Kem dưỡng da ban đêm</a>
+                            <a href="#">Dưỡng môi</a>
+                            <a href="#">Dưỡng mắt</a>
+                            <a href="#">Mặt nạ</a>
+                        </div>
+                        <div class="column">
+                            <h4>Chăm sóc cơ thể</h4>
+                            <a href="#">Sữa tắm</a>
+                            <a href="#">Khử mùi</a>
+                            <a href="#">Dưỡng thể</a>
+                            <a href="#">Kem dưỡng tay</a>
+                            <a href="#">Chăm sóc gót chân</a>
+                        </div>
+                        <div class="column">
+                            <h4>Nước hoa</h4>
+                            <a href="#">Nước hoa nam</a>
+                            <a href="#">Nước hoa nữ</a>
+                        </div>
+                        <div class="column">
+                            <h4>Vệ sinh phụ nữ</h4>
+                            <a href="#">Cốc nguyệt san</a>
+                            <a href="#">Dung dịch vệ sinh phụ nữ</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    Thực phẩm chức năng <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu-one">
+                            <a href="#">Sữa rửa mặt</a>
+                            <a href="#">Kem dưỡng da ban ngày</a>
+                            <a href="#">Kem dưỡng da ban đêm</a>
+                            <a href="#">Dưỡng môi</a>
+                            <a href="#">Dưỡng mắt</a>
+                            <a href="#">Mặt nạ</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    Răng miệng <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu-one">
+                        <a href="#">Kem đánh răng</a>
+                        <a href="#">Bàn chải đánh răng</a>
+                        <a href="#">Máy tăm nước</a>
+                        <a href="#">Sản phẩm lưỡi và kẽ</a>
+                        <a href="#">Nước xúc miệng và xịt thơm</a>
+                </div>
+                </li>
+                <li class="dropdown">
+                    Em bé <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu-one">
+                        <a href="#">Chống hăm</a>
+                        <a href="#">Dưỡng da baby</a>
+                        <a href="#">Tắm & gội baby</a>
+                        <a href="#">Sữa công thức</a>
+                        <a href="#">Viêm ngậm chắc răng</a>
+                        <a href="#">Phụ kiện phòng tắm</a>
+                </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="notification" style="display: none;"></div>
+    <div class="container">
+        <div class="product-box">
+            <!-- Cột trái: Ảnh sản phẩm -->
+            <div class="product-image">
+                <img id="product-image" src="" alt="Viên nang dưỡng da">
+            </div>
+
+            <!-- Cột phải: Thông tin sản phẩm -->
+            <div class="product-info">
+                <h1 id="product-name-main">Tên Sản Phẩm</h1>
+                <div class="rating">★★★★★</div>
+                <p class="price"><span id="product-price">0 đ</span></p>
+                <p id="brand"><strong>Thương hiệu:</strong> Diadermine</p>
+                <p id="origin"><strong>Xuất xứ:</strong> Đức</p>
+                <p><strong>Đóng gói:</strong> 7 viên / vỉ</p>
+
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="text" value="1">
+                    <button class="increase">+</button>
+                </div>
+
+                <button class="buy-button" id="product-list" data-id="">THÊM VÀO GIỎ HÀNG</button>
+
+                <div class="overlay" id="overlay"></div>
+
+                <div id="cartNotification" class="notification">
+                    <img id="notificationIcon" src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Icon">
+                    <p id="notificationText">SẢN PHẨM ĐÃ ĐƯỢC THÊM VÀO GIỎ HÀNG</p>
+                </div>
+                
+
+            <p class="sku"><strong>Mã sản phẩm:</strong> <span id="product-id">DIA0020N0078</span></p>
+
+            <p class="category"><strong>Danh mục:</strong> Chăm Sóc & Nước Hoa, Chăm Sóc Da Mặt, Mặt Nạ, Huyết Thanh & Viên Nang Đẹp Da</p>
+
+            <div class="social-share">
+                <p><strong>Chia sẻ:</strong></p>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon messenger"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active">MÔ TẢ</div>
+        <div class="tab">ĐÁNH GIÁ (5)</div>
+        <div class="tab-underline"></div>
+    </div>
+    
+    <div class="tab-content active">
+        <h1 id="product-name-desciption">Viên nang Diadermine Lift Sofort Effekt Kapseln</h1    >
+        <p id="product-desciption">Viên nang Diadermine Lift Sofort Effekt Kapseln là tinh chất dưỡng da collagen dạng viên nang, chứa nồng độ dưỡng chất cao, chăm sóc chuyên sâu cho làn da của bạn.</p>
+        <!--<p>Làn da săn chắc và trẻ trung là nhờ một mạng lưới collagen dày đặc dưới da. Với sự gia tăng tuổi tác, mạng lưới sản xuất collagen của da trở nên chậm và collagen tự nhiên của da bị suy yếu. Nếp nhân bắt đầu xuất hiện và làn da mất dần độ săn chắc.</p>
+        <p>Viên nang Diadermine Lift Sofort Effekt Kapseln có công dụng giảm mờ nếp nhăn, làm căng da. Kết hợp 2 cơ chế hoạt động:</p>
+        
+            <li>Công thức mới với collagen activator thúc đẩy sản xuất collagen ở sâu trong da. Kích hoạt các tế bào da và do đó cũng cố mạng lưới collagen.</li>
+            <li>Tổ hợp vitamin-active giúp da căng mịn, cung cấp năng lượng và sức mạnh mới cho làn da. Làm giảm các dấu hiệu của sự mệt mỏi. Da lấy lại sự tươi sáng rạng rỡ của nó.</li>
+        
+        <h1>Đảm bảo</h1>
+            <li>Khẳng định khả năng tương thích da thông qua xét nghiệm dung nạp</li>
+            <li>Được kiểm soát bỡi bác sĩ da liễu.</li>
+            <li>Sản phẩm DIADERMINE này được chứng nhận bởi các chuyên gia da liễu từ ECARF (Trung tâm nghiên cứu Dị Ứng Châu Âu).</li>
+        <h1>Thành phần viên nang Diadermine Lift Sofort Effekt Kapseln</h1>
+        <li>Xyclometicon, polysilicone-11, dimethicone, Ascorbic Acid, Methyl Methacrylate / glycol dimethacrylate crosspolymer, benzoates alkyl C12-15, Tocopheryl Acetate, Glycyrrhiza Glabra, BHT</li>
+        <h1>Hướng dẫn sử dụng</h1>
+        <p>Viên nang Diadermine Lift Sofort Effekt Kapseln dùng trước khi đi ngủ, mỗi ngày 1 viên. Thực hiện đầy đủ các bước chăm sóc da mặt để đạt hiệu quả tốt nhật:</p>
+        
+            <li>Làm sạch da với sữa rửa mặt</li>
+            <li>Sử dụng nước hoa hồng sau khi rửa mặt. Giúp cân bằng độ pH tự nhiên cho da, giúp cấu trúc của da không bị thay đổi. Từ đó hạn chế tình trạng da bị mụn hoặc dễ bị khô. Ngoài ra, nước hoa hồng còn là chất dẫn để da dễ dàng hấp thụ các sản phẩm dưỡng ở bước sau.</li>
+            <li>Cắt đầu viên nang Diadermine, nhẹ nhàng bóp ra đầu ngón tay, áp dụng tinh chất tập trung vào mặt, cổ và ngực. Sử dụng các đầu ngón tay matxa nhẹ nhàng, táp nhẹ lên da nhiều lần. Giúp cho dưỡng chất thẩm thấu thật đều vào trong da.</li>
+        
+        <h1>Lưu ý khi sử dung viên nang Diadermine Lift Sofort Effekt Kapseln</h1>
+        
+            <li>Chỉ sử dụng bên ngoài. không nuốt.</li>
+            <li>Để xa tầm tay trẻ em.</li>
+            <li>Không để dính trong mắt, miệng và mũi.</li>
+            <li>Bảo quản nơi khô ráo, tránh ánh nắng mặt trời và nơi có nhiệt độ cao.</li>
+            <li>Hiệu quả sử dụng có thể đa dạng tùy cơ địa mỗi người.</li>-->
+    
+    </div>
+    
+    <div class="tab-content">
+        <h1>Đánh giá sản phẩm</h1>
+
+        <div class="review-container">
+            <p>Thêm đánh giá</p>
+            <p>Email của bạn sẽ không được hiển thị công khai. Các trường bắt buộc được đánh dấu *</p>
+            <label>Đánh giá của bạn *</label>
+            <div class="rating-stars">
+                <div class="rating-group">
+                    <span>★</span>
+                </div>
+                <div class="rating-group">
+                    <span>★★</span>
+                </div>
+                <div class="rating-group">
+                    <span>★★★</span>
+                </div>
+                <div class="rating-group">
+                    <span>★★★★</span>
+                </div>
+                <div class="rating-group">
+                    <span>★★★★★</span>
+                </div>
+            </div>
+            <label>Nhận xét của bạn *</label>
+            <textarea rows="4" style="width: 100%;"></textarea>
+            <label>Tên *</label>
+            <input type="text" style="width: 100%;">
+            <label>Email *</label>
+            <input type="email" style="width: 100%;">
+            <button class="submit-btn">GỬI ĐI</button>
+        </div>
+    </div>
+    
+    <section class="product-section">
+        <div class="section-title">
+            <h2>CÓ THỂ BẠN THÍCH</h2>
+        </div>
+        <div class="product-grid" id="best-seller"></div> <!-- Thêm ID -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="about">
+                <h3>ABOUT US</h3>
+                <p>Kênh xách tay Đức là website bán lẻ online các sản phẩm xách tay Đức với giá tốt nhất.</p>
+                <p>📞 0917896568</p>
+                <p>📞 0988828486</p>
+            </div>
+            <div class="customer-support">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <ul>
+                    <li>Hướng dẫn mua hàng</li>
+                    <li>Chính sách giao hàng</li>
+                    <li>Chính sách đổi/trả hàng</li>
+                    <li>Điều khoản sử dụng</li>
+                </ul>
+            </div>
+            <div class="reviews">
+                <h3>ĐÁNH GIÁ MỚI NHẤT</h3>
+                <ul>
+                    <li>Kem tẩy lông Beleza, 125ml</li>
+                    <li>Bột khử mùi hôi chân, 100g</li>
+                    <li>Sữa rửa mặt Neutrogena, 150ml</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © Bản quyền thuộc về Kênh Xách Tay Đức
+        </div>
+    </footer>
+
+    <script src="/frontend/js/product.js"></script>
+</body>
+</html>

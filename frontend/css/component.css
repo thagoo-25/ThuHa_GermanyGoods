@@ -1,0 +1,279 @@
+/*=========== TABLE OF CONTENTS ===========
+1. Input CSS
+2. Button CSS
+3. Checkbox CSS
+4. Selectbox CSS
+5. Text CSS
+6. Heading CSS
+7. Container CSS
+==========================================*/
+
+/*-------------------------------------
+  1. Input CSS
+--------------------------------------*/
+.ui.input.round {
+    border-radius: var(--radius-sm);
+  }
+  
+  .ui.input.size-xs {
+    height: 30px;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+    font-size: 16px;
+  }
+  
+  .ui.input.size-sm {
+    height: 38px;
+    padding-left: var(--space-9xl);
+    padding-right: var(--space-3xl);
+    font-size: 14px;
+  }
+  
+  .ui.input.fill.white_a700 {
+    background-color: var(--white_a700);
+    color: var(--gray_500_01);
+  }
+  
+  .ui.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: text;
+    background-color: var(--white_a700);
+    border-radius: var(--radius-sm);
+  }
+  
+  /*-------------------------------------
+    2. Button CSS
+  --------------------------------------*/
+  .ui.button.round {
+    border-radius: var(--radius-4xl);
+  }
+  
+  .ui.button.size-lg {
+    height: 62px;
+    padding-left: var(--space-11xl);
+    padding-right: var(--space-11xl);
+    font-size: 24px;
+  }
+  
+  .ui.button.size-md {
+    height: 48px;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 16px;
+  }
+  
+  .ui.button.size-sm {
+    height: 42px;
+    padding-left: 34px;
+    padding-right: 34px;
+    font-size: 14px;
+  }
+  
+  .ui.button.size-xs {
+    height: 38px;
+    padding-left: var(--space-9xl);
+    padding-right: var(--space-9xl);
+    font-size: 15px;
+  }
+  
+  .ui.button.fill.red_900 {
+    background-color: var(--red_900);
+    color: var(--white_a700);
+  }
+  
+  .ui.button.fill.deep_orange_50 {
+    background-color: var(--deep_orange_50);
+    color: var(--red_900);
+  }
+  
+  .ui.button.fill.white_a700 {
+    background-color: var(--white_a700);
+    color: var(--black_900);
+  }
+  
+  .ui.button.outline.blue_gray_50 {
+    color: var(--blue_gray_50);
+    border: 2px solid var(--blue_gray_50);
+  }
+  
+  .ui.button {
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+  
+  /*-------------------------------------
+    3. Checkbox CSS
+  --------------------------------------*/
+  .ui.checkbox.size-xs {
+    height: 20px;
+    width: 20px;
+    border-radius: var(--radius-sm);
+  }
+  
+  .ui.checkbox.primary {
+    accent-color: #ffe2e2;
+  }
+  
+  .ui.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  /*-------------------------------------
+    4. Selectbox CSS
+  --------------------------------------*/
+  .ui.selectbox.square {
+    border-radius: 0px;
+  }
+  
+  .ui.selectbox.round {
+    border-radius: var(--radius-sm);
+  }
+  
+  .ui.selectbox.size-xs {
+    height: 24px;
+    padding-left: var(--space-3xl);
+    padding-right: var(--space-3xl);
+    font-size: 16px;
+  }
+  
+  .ui.selectbox.size-md {
+    height: 32px;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-sm);
+    font-size: 16px;
+  }
+  
+  .ui.selectbox.size-sm {
+    height: 30px;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-sm);
+  }
+  
+  .ui.selectbox.fill.white_a700 {
+    background-color: var(--white_a700);
+    color: var(--black_900);
+  }
+  
+  .ui.selectbox {
+    display: flex;
+  }
+  
+  /*-------------------------------------
+    5. Text CSS
+  --------------------------------------*/
+  .ui.text.size-textxs {
+    font-size: 6px;
+    font-weight: 400;
+  }
+  
+  .ui.text.size-texts {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  .ui.text.size-textmd {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .ui.text.size-textlg {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  .ui.text.size-textxl {
+    font-size: 16px;
+    font-weight: 400;
+    @media only screen and (max-width: 550px) {
+      font-size: 13px;
+    }
+  }
+  
+  .ui.text.size-text2xl {
+    font-size: 18px;
+    font-weight: 400;
+    @media only screen and (max-width: 550px) {
+      font-size: 15px;
+    }
+  }
+  
+  .ui.text.size-text3xl {
+    font-size: 20px;
+    font-weight: 400;
+    @media only screen and (max-width: 550px) {
+      font-size: 17px;
+    }
+  }
+  
+  .ui.text.size-text4xl {
+    font-size: 24px;
+    font-weight: 400;
+    @media only screen and (max-width: 1050px) {
+      font-size: 22px;
+    }
+  
+    @media only screen and (max-width: 550px) {
+      font-size: 20px;
+    }
+  }
+  
+  .ui.text.size-text5xl {
+    font-size: 32px;
+    font-weight: 400;
+    @media only screen and (max-width: 1050px) {
+      font-size: 30px;
+    }
+  
+    @media only screen and (max-width: 550px) {
+      font-size: 27px;
+    }
+  }
+  
+  .ui.text {
+    color: var(--blue_gray_50);
+    font-family: Lato;
+  }
+  
+  /*-------------------------------------
+    6. Heading CSS
+  --------------------------------------*/
+  .ui.heading.size-headingxs {
+    font-size: 11px;
+    font-weight: 700;
+  }
+  
+  .ui.heading.size-headings {
+    font-size: 16px;
+    font-weight: 600;
+    @media only screen and (max-width: 550px) {
+      font-size: 13px;
+    }
+  }
+  
+  .ui.heading {
+    color: var(--blue_gray_50);
+    font-family: Lato;
+  }
+  
+  /*-------------------------------------
+    7. Container CSS
+  --------------------------------------*/
+  .container-xs {
+    max-width: 1080px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  

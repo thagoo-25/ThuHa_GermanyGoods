@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/logInAdmin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Croissant+One&family=Oswald:wght@300;400&family=Jost:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="/img/images/img_logo_3.png" alt="German Goods Logo">
+        </div>
+        <div class="admin-link">
+            <a href="/frontend/html/logInUser.html">DÀNH CHO KHÁCH HÀNG</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="login-container">
+        <div class="row">
+            <!-- Logo + Slogan -->
+            <div class="col-md-6 left-section">
+                <img src="/img/homepgae/lgo-removebg-preview.png" alt="Logo German Goods" class="brand-logo">
+                <p>Trang thương mại điện tử được yêu thích ở Việt Nam</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="col-md-4 login-form">
+                <h2>ĐĂNG NHẬP</h2>
+                <form id="loginForm" action="#">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="adminname" placeholder="Tên đăng nhập">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" class="btn btn-danger login-btn">ĐĂNG NHẬP</button>
+                    <div id="notification" style="display: none; margin-top: 10px; margin-bottom: 10px;"></div>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Ghi nhớ tôi</label>
+                    </div>
+
+                    <div class="social-login">
+                        <div class="divider">
+                        </div>
+                        <span>HOẶC</span>
+                        <p class="new-member">Quản trị viên mới? <a href="./signInAdmin.html">ĐĂNG KÝ!</a></p>
+                  </div>
+                </form>
+            </div>
+        </div>
+        <script src="/frontend/js/logInAdmin.js"></script>
+    </main>
+</body>
+</html>

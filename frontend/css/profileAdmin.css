@@ -1,0 +1,236 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a00;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header .header-right {
+  display: flex;
+  padding-right: 20px;
+}
+
+.header span {
+  padding-right: 15px;
+}
+
+.header-right .fa {
+  padding-right: 5px;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+/* Định dạng chung cho phần admin info */
+header #admin-Info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Phần hiển thị tên người dùng */
+header #adminname {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Icon danh sách bên cạnh adminname */
+header #admin-Info i {
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho icon */
+header #admin-Info i:hover {
+  color: #faeceb;
+}
+
+/* Định dạng dropdown menu */
+header #admin-Info #admin-dropdown {
+  margin-top: 14px;
+  display: none; /* Mặc định ẩn */
+  position: absolute;
+  top: 100%;  /* Đưa xuống dưới icon một chút */
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 180px;
+  z-index: 1000;
+  flex-direction: column; /* Sắp xếp theo chiều dọc */
+}
+
+/* Khi có class 'show', hiển thị dropdown */
+header #admin-dropdown.show {
+  display: flex;
+}
+
+/* Thiết lập giao diện cho từng mục */
+header #admin-dropdown a {
+  display: block;
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hiệu ứng khi hover */
+header #admin-dropdown a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Loại bỏ border-bottom ở mục cuối */
+header #admin-dropdown a:last-child {
+  border-bottom: none;
+}
+
+.container {
+  display: flex;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.profile p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 1000;
+  margin-bottom: 0;
+}
+
+.profile a {
+  color: white;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #B65555;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar .profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .profile .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar nav ul li i {
+  margin-right: 10px;
+}
+
+.content {
+  padding: 20px;
+  flex: 1;
+}
+
+.info-card {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input, form select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #a00;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.image-upload {
+  text-align: center;
+}
+
+#fileInput {
+  margin-left: 100px;
+}
+
+.upload-btn {
+  display: inline-block;
+  background-color: #a00;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.avatar-preview {
+  width: 100px;
+  height: 100px;
+  background-color: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}

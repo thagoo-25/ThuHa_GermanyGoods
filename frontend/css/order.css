@@ -1,0 +1,307 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white; /* Giữ nền để không bị trong suốt */
+    z-index: 1000; /* Đảm bảo header luôn ở trên */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+}
+
+/* Top Navigation */
+.left {
+    font-weight: 800;
+}
+header .right {
+    margin-right: 35px;
+}
+nav ul {
+    margin-bottom: 0 !important;
+}
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a40000;
+    color: white;
+    padding: 4px 20px;
+}
+.top-nav .right span {
+    margin: 0 10px;
+    cursor: pointer;
+}
+.login-btn {
+    background: #121A4F;
+    font-weight: 400;
+    color: white;
+    padding: 5px 15px;
+    border: 2px solid #121A4F;
+    border-radius: 8px; /* Bo góc để mềm mại hơn */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Hiệu ứng mượt hơn khi hover */
+}
+
+.login-btn:hover {
+    background: #1E2A6A; /* Màu tối hơn khi hover */
+}
+
+/* Định dạng chung cho phần user info */
+header #user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Phần hiển thị tên người dùng */
+header #username {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Icon danh sách bên cạnh username */
+header #user-info i {
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho icon */
+header #user-info i:hover {
+    color: #faeceb;
+}
+
+/* Định dạng dropdown menu */
+header #user-dropdown {
+    display: none; /* Mặc định ẩn */
+    position: absolute;
+    top: 100%;  /* Đưa xuống dưới icon một chút */
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+}
+
+/* Khi có class 'show', hiển thị dropdown */
+header #user-dropdown.show {
+    display: flex;
+}
+
+/* Thiết lập giao diện cho từng mục */
+header #user-dropdown a {
+    display: block;
+    padding: 12px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+/* Hiệu ứng khi hover */
+header #user-dropdown a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Loại bỏ border-bottom ở mục cuối */
+header #user-dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 50px;
+    background: #f8cfcf;
+}
+.main-nav .logo img {
+    height: 25px;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+.main-nav .search-container {
+    display: flex;
+    align-items: center;
+    background: white; /* Nền trắng cho thanh search */
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #f8cfcf; /* Viền màu hồng nhẹ */
+    width: 600px;
+}
+
+.main-nav .search-box {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+}
+
+.main-nav .search-icon {
+    background: #8B0000; /* Màu đỏ đậm */
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.main-nav .search-icon i {
+    color: white;
+    font-size: 16px;
+}
+
+.main-nav h1 {
+    color: #8B0000;
+    font-size: 18px;
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .container h2 {
+    color: #b10025;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .container .address,
+  .container .product,
+  .container .note,
+  .container .payment-methods,
+  .container .summary {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+  
+  .container .address strong {
+    color: #000;
+  }
+  
+  .container .label {
+    color: #b10025;
+    font-weight: bold;
+  }
+  
+  .container .flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .container .note input,
+  .container .note textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .container .payment-methods button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .container .payment-methods .selected {
+    border-color: #b10025;
+    color: #b10025;
+  }
+  
+  .container .summary .flex-row span:last-child {
+    font-weight: bold;
+    color: #b10025;
+  }
+  
+  .container .submit {
+    text-align: right;
+    padding-top: 15px;
+  }
+  
+  .container .submit button {
+    background-color: #b10025;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .container .footer-note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 15px;
+  }
+  
+  .container .footer-note a {
+    color: #4080ff;
+    text-decoration: none;
+  }
+  
+  .container .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .container .product-table th,
+  .container .product-table td {
+    padding: 10px;
+    border: 1px solid #eee;
+    vertical-align: top;
+  }
+  
+  .container .product {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .container .product img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+/*Modal*/
+.modal-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .modal-body label {
+    font-weight: 500;
+  }
+  .btn-danger {
+    background-color: #ee4d2d;
+    border-color: #ee4d2d;
+  }
+  

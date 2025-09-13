@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Germany Good</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/frontend/css/homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Croissant+One&family=Oswald:wght@300;400&family=Jost:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+<header>
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <div class="left">Hàng Xách Tay Chính Hãng - Cam Kết Chất Lượng Sản Phẩm</div>
+        <div class="right">
+            <span><i class="fas fa-bell"></i> Thông báo</span>
+            <span><i class="fas fa-bell"></i> Cài đặt</span>
+            <span>Khám phá <i class="fas fa-chevron-down"></i></span>
+            <span onclick="myFunction()">Hỗ trợ </span>
+            <a href="/frontend/html/cart.html" style="color:white;"><span><i class="fas fa-shopping-cart"></i></span></a>
+            <button class="login-btn" onclick="window.location.href='/frontend/html/logInUser.html'">ĐĂNG NHẬP</button>
+            <!-- Hiển thị username + icon list khi đăng nhập -->
+            <span id="user-info">
+                <span id="username"></span>
+                <i id="menu-icon" class="fas fa-list" onclick="myFunction()"></i>
+                <!-- Dropdown Menu -->
+            <div id="user-dropdown" class="dropdown-menu">
+                <a href="/frontend/html/profileUser.html">Tài khoản của tôi</a>
+                <a id="view-orders-link">Đơn hàng</a>
+                <a href="#" id="logout-btn">Đăng xuất</a>
+                </div>    
+            </span>
+        </div>
+    </div>
+    
+    <!-- Main Navigation Bar -->
+    <div class="main-nav">
+        <div class="logo"> <a href="/frontend/html/homepage.html"> <img src="/img/homepgae/lgo.jpg" alt="Logo"> </a> </div>
+        <div class="search-container">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <input type="text" class="search-box" id="search-box" placeholder="Search...">
+        </div>  
+        <div id="search-results"></div>      
+        <div class="contact">Liên hệ: 0396559621</div>
+    </div>
+    
+    <!-- Category Navigation -->
+    <nav>
+        <ul>
+            <li class="dropdown">
+                Trang điểm <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu">
+                    <div class="column">
+                        <h4>Mắt</h4>
+                        <a href="#">Phấn mắt</a>
+                        <a href="#">Bút kẻ mắt</a>
+                    </div>
+                    <div class="column">
+                        <h4>Mặt</h4>
+                        <a href="#">Kem nền</a>
+                        <a href="#">BB Cream & CC Cream</a>
+                        <a href="#">Phấn phủ</a>
+                    </div>
+                    <div class="column">
+                        <h4>Môi</h4>
+                        <a href="#">Son thỏi</a>
+                        <a href="#">Son nước</a>
+                    </div>
+                    <div class="column">
+                        <h4>Phụ kiện</h4>
+                        <a href="#">Tẩy trang</a>
+                        <a href="#">Bọt biển make up</a>
+                    </div>
+                </div>
+            </li>                     
+            <li class="dropdown">
+                Hộ gia đình <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu">
+                    <div class="column">
+                        <h4>Chất tẩy rửa & vệ sinh</h4>
+                        <a href="#">Vệ sinh Nhà bếp</a>
+                        <a href="#">Vệ sinh Phòng tắm & WC</a>
+                        <a href="#">Chất tẩy rửa đặc biệt</a>
+                    </div>
+                    <div class="column">
+                        <h4>Giặt ủi quần áo</h4>
+                        <a href="#">Bàn ủi & phụ kiện</a>
+                        <a href="#">Bột giặt</a>
+                        <a href="#">Phụ giặt</a>
+                        <a href="#">Vệ sinh lồng giặt</a>
+                        <a href="#">Thơm tủ quần áo</a>
+                    </div>
+                    <div class="column">
+                        <h4>Đồ gia dụng</h4>
+                        <a href="#">Dụng cụ phòng bếp</a>
+                        <a href="#">Đèn</a>
+                        <a href="#">Làm mát không khí & thơm phòng</a>
+                        <a href="#">Máy hút bụi</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                Chăm sóc và nước hoa <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu">
+                    <div class="column">
+                        <h4>Chăm sóc da mặt</h4>
+                        <a href="#">Sữa rửa mặt</a>
+                        <a href="#">Kem dưỡng da ban ngày</a>
+                        <a href="#">Kem dưỡng da ban đêm</a>
+                        <a href="#">Dưỡng môi</a>
+                        <a href="#">Dưỡng mắt</a>
+                        <a href="#">Mặt nạ</a>
+                    </div>
+                    <div class="column">
+                        <h4>Chăm sóc cơ thể</h4>
+                        <a href="#">Sữa tắm</a>
+                        <a href="#">Khử mùi</a>
+                        <a href="#">Dưỡng thể</a>
+                        <a href="#">Kem dưỡng tay</a>
+                        <a href="#">Chăm sóc gót chân</a>
+                    </div>
+                    <div class="column">
+                        <h4>Nước hoa</h4>
+                        <a href="#">Nước hoa nam</a>
+                        <a href="#">Nước hoa nữ</a>
+                    </div>
+                    <div class="column">
+                        <h4>Vệ sinh phụ nữ</h4>
+                        <a href="#">Cốc nguyệt san</a>
+                        <a href="#">Dung dịch vệ sinh phụ nữ</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                Thực phẩm chức năng <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu-one">
+                        <a href="#">Sữa rửa mặt</a>
+                        <a href="#">Kem dưỡng da ban ngày</a>
+                        <a href="#">Kem dưỡng da ban đêm</a>
+                        <a href="#">Dưỡng môi</a>
+                        <a href="#">Dưỡng mắt</a>
+                        <a href="#">Mặt nạ</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                Răng miệng <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu-one">
+                    <a href="#">Kem đánh răng</a>
+                    <a href="#">Bàn chải đánh răng</a>
+                    <a href="#">Máy tăm nước</a>
+                    <a href="#">Sản phẩm lưỡi và kẽ</a>
+                    <a href="#">Nước xúc miệng và xịt thơm</a>
+            </div>
+            </li>
+            <li class="dropdown">
+                Em bé <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu-one">
+                    <a href="#">Chống hăm</a>
+                    <a href="#">Dưỡng da baby</a>
+                    <a href="#">Tắm & gội baby</a>
+                    <a href="#">Sữa công thức</a>
+                    <a href="#">Viêm ngậm chắc răng</a>
+                    <a href="#">Phụ kiện phòng tắm</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div id="notification" style="display: none;"></div>
+    <!-- Banner -->
+    <section class="banner">
+        <img src="/img/homepgae/banner1.jpg" alt="Lanco Med - For People with Sensitive Skin">
+    </section>
+
+    <!-- Free Shipping -->
+    <section class="free-shipping">
+        <img src="/img/homepgae/freeship.jpg" alt="Free Shipping">
+    </section>
+
+    <!-- Best Seller Section -->
+    <section class="product-section">
+        <div class="section-title">
+            <h2>BEST SELLER!</h2>
+            <div class="line"></div>
+            <a href="#">View more ></a>
+        </div>
+        <div class="product-grid" id="best-seller"></div> <!-- Thêm ID -->
+    </section>
+
+<!-- New Products Section -->
+<section class="product-section">
+    <div class="section-title">
+        <h2>NEW PRODUCTS</h2>
+        <div class="line"></div>
+        <a href="#">View more ></a>
+    </div>
+    <div class="product-grid" id="new-products"></div> <!-- Thêm ID -->
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="about">
+                <h3>ABOUT US</h3>
+                <p>Kênh xách tay Đức là website bán lẻ online các sản phẩm xách tay Đức với giá tốt nhất.</p>
+                <p>📞 0917896568</p>
+                <p>📞 0988828486</p>
+            </div>
+            <div class="customer-support">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <ul>
+                    <li>Hướng dẫn mua hàng</li>
+                    <li>Chính sách giao hàng</li>
+                    <li>Chính sách đổi/trả hàng</li>
+                    <li>Điều khoản sử dụng</li>
+                </ul>
+            </div>
+            <div class="reviews">
+                <h3>ĐÁNH GIÁ MỚI NHẤT</h3>
+                <ul>
+                    <li>Kem tẩy lông Beleza, 125ml</li>
+                    <li>Bột khử mùi hôi chân, 100g</li>
+                    <li>Sữa rửa mặt Neutrogena, 150ml</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © Bản quyền thuộc về Kênh Xách Tay Đức
+        </div>
+    </footer>
+
+    <script src="/frontend/js/homepage.js"></script>
+    <script src="../js/search.js"></script>
+
+</body>
+</html>
